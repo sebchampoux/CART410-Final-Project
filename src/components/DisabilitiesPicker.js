@@ -1,4 +1,5 @@
 import Namespace from '../utils/namespace';
+import { NO_COLOR_BLINDNESS } from '../constants/constants';
 
 const n = new Namespace('disabilities-picker');
 
@@ -51,8 +52,8 @@ const DisabilitiesPicker = ({
 						type="radio"
 						name="color-blindness"
 						id="none"
-						value="none"
-						checked={colorBlindness === 'none'}
+						value={NO_COLOR_BLINDNESS}
+						checked={colorBlindness === NO_COLOR_BLINDNESS}
 						onChange={onColorBlindnessChange}
 					/>
 					<label className={n.child('label')} htmlFor="none">None (full color vision)</label>

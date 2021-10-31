@@ -1,7 +1,10 @@
 # CART410 Final Project
 
 Research-creation project for CART410 Research-Creation in Computation Arts, Fall 2021.
-Made with Node 
+
+Node 14.15.1
+
+NPM 7.12.0
 
 
 # Getting Started with Create React App

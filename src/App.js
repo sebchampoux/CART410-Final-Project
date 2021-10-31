@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DisabilitiesPicker from './components/DisabilitiesPicker';
 import Namespace from './utils/namespace';
+import { NO_COLOR_BLINDNESS } from './constants/constants';
 
 import './scss/App.scss';
 import './bootstrap/bootstrap-reboot.min.css';
@@ -10,8 +11,6 @@ import './bootstrap/bootstrap-utilities.min.css';
 const blinder = require('color-blind');
 
 const n = new Namespace('app');
-
-export const NO_COLOR_BLINDNESS = 'none';
 
 const colors = {
 	'light-grey': '#fafafa',
