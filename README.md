@@ -1,3 +1,9 @@
+# CART410 Final Project
+
+Research-creation project for CART410 Research-Creation in Computation Arts, Fall 2021.
+Made with Node 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

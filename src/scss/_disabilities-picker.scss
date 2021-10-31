@@ -1,0 +1,38 @@
+.disabilities-picker {
+	background-color: var(--light-grey);
+	padding: 30px;
+	border-radius: 3px;
+	box-shadow: 0 3px 5px 2px #ccc;
+
+	&__fieldset {
+		border: none;
+		padding: 0;
+		margin-bottom: 15px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__legend {
+		margin-bottom: 5px;
+		font-weight: bold;
+	}
+
+	&__options {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&__option {
+		display: flex;
+		align-items: center;
+		margin-bottom: 5px;
+	}
+
+	&__input {
+		margin-right: 10px;
+		margin-left: 0;
+	}
+}
