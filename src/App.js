@@ -4,6 +4,7 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { NO_COLOR_BLINDNESS } from './constants/constants';
 import Namespace from './utils/namespace';
 
+import Colors from './components/Colors';
 import DisabilitiesPicker from './components/DisabilitiesPicker';
 
 import './bootstrap/bootstrap-reboot.min.css';
@@ -11,31 +12,7 @@ import './bootstrap/bootstrap-grid.min.css';
 import './bootstrap/bootstrap-utilities.min.css';
 import './scss/App.scss';
 
-const blinder = require('color-blind');
-
 const n = new Namespace('app');
-
-const colors = {
-	'light-grey': '#f8f8f8',
-	red: '#ff0000',
-	blue: '#1393dd',
-	white: '#ffffff',
-
-	'very-dark-green': '#212922',
-	'dark-green': '#294936',
-	'medium-green': '#3E6259',
-	'light-green': '#61e38e'
-};
-const computeColorsString = (colorBlindness) => {
-	const result = [];
-	for (const [colorName, value] of Object.entries(colors)) {
-		const transformedColor = colorBlindness === NO_COLOR_BLINDNESS
-			? value
-			: blinder[colorBlindness](value);
-		result.push(`--${colorName}: ${transformedColor};\n`);
-	}
-	return result.join('');
-};
 
 const App = () => {
 	const [cacheEnabled, setCacheEnabled] = useState(false);
@@ -47,11 +24,7 @@ const App = () => {
 
 	return (
 		<>
-			<style>
-				{':root {'}
-					{computeColorsString(colorBlindness)}
-				{'}'}
-			</style>
+			<Colors colorBlindness={colorBlindness} />
 			<a href="#main-content" className={n.child('skip-to-content')}>Skip to main content</a>
 			{cacheEnabled && <div className={n.child('cache')} />}
 			<div className={n.child('site-wrapper', !mouseEnabled && ['mouse-disabled'])}>
