@@ -1,8 +1,37 @@
 .disabilities-picker {
-	background-color: var(--light-grey);
-	padding: 30px;
-	border-radius: 3px;
-	box-shadow: 0 3px 5px 2px #ccc;
+	&__toggle-btn {
+		background-color: var(--grey);
+		padding: 8px 20px;
+		font-size: 2rem;
+		border: none;
+		text-align: right;
+		position: absolute;
+		top: 0;
+		right: 0;
+		
+		@include outline;
+
+		&:hover,
+		&:focus {
+			background-color: var(--light-grey);
+		}
+		
+		&--closed {
+			box-shadow: 0 3px 5px 2px #ccc;
+		}
+	}
+	
+	&__form {
+		background-color: var(--light-grey);
+		padding: 30px;
+		padding-top: 70px;
+		border-radius: 3px;
+		box-shadow: 0 3px 5px 2px #ccc;
+
+		&--closed {
+			display: none;
+		}
+	}
 
 	&__fieldset {
 		border: none;

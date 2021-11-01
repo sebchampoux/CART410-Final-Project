@@ -2,6 +2,7 @@ import { NO_COLOR_BLINDNESS } from '../constants/constants';
 const blinder = require('color-blind');
 
 const colors = {
+	'grey': '#e8e8e8',
 	'light-grey': '#f8f8f8',
 	red: '#ff0000',
 	blue: '#1393dd',
