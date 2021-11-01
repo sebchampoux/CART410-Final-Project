@@ -16,6 +16,7 @@ import './scss/App.scss';
 import Example from './components/Example';
 import Section from './components/Section';
 import GoodCollapsible from './components/GoodCollapsible';
+import BadCollapsible from './components/BadCollapsible';
 
 const n = new Namespace('app');
 
@@ -48,7 +49,7 @@ const App = () => {
 							className={n.child('section')}
 						>
 							<Example exampleType={EXAMPLE_BAD}>
-								TODO!
+								<BadCollapsible />
 							</Example>
 							<Example exampleType={EXAMPLE_GOOD}>
 								<GoodCollapsible />
@@ -57,7 +58,6 @@ const App = () => {
 					</div>
 				</main>
 			</div>
-			{/*
 			<DisabilitiesPicker
 				{...{
 					mouseEnabled,
@@ -69,7 +69,6 @@ const App = () => {
 				}}
 				className={n.child('disabilities-picker')}
 			/>
-			/**/}
 		</>
 	);
 }
