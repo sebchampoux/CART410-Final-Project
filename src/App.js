@@ -6,6 +6,8 @@ import Namespace from './utils/namespace';
 
 import Colors from './components/Colors';
 import DisabilitiesPicker from './components/DisabilitiesPicker';
+import BadButton from './components/BadButton';
+import GoodButton from './components/GoodButton';
 
 import './bootstrap/bootstrap-reboot.min.css';
 import './bootstrap/bootstrap-grid.min.css';
@@ -20,7 +22,6 @@ const App = () => {
 	const [colorBlindness, setColorBlindness] = useState(NO_COLOR_BLINDNESS);
 
 	const sectN = new Namespace('section');
-	const btnN = new Namespace('button');
 
 	return (
 		<>
@@ -38,14 +39,14 @@ const App = () => {
 										<Icon icon="times-circle" className={sectN.child('head-icon')} />
 										Counter-example
 									</h3>
-									<div className={btnN.base(['bad'])} onClick={() => alert('Bad button clicked')}>Bad button!</div>
+									<BadButton onClick={() => alert('Inaccessible button clicked!')}>Bad button!</BadButton>
 								</div>
 								<div className={sectN.child('good-example', null, 'col-lg-6')}>
 									<h3 className={sectN.child('example-head', ['good'])}>
 										<Icon icon="check-circle" className={sectN.child('head-icon')} />
 										Accessible version
 									</h3>
-									<button className={btnN.base(['good'])} onClick={() => alert('Accessible button clicked')}>Accessible button!</button>
+									<GoodButton onClick={() => alert('Accessible button clicked!')}>Accessible button!</GoodButton>
 								</div>
 							</div>
 						</section>
