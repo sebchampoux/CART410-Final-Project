@@ -28,7 +28,8 @@ const App = () => {
 	return (
 		<>
 			<Colors colorBlindness={colorBlindness} />
-			<a href="#main-content" className={n.child('skip-to-content')}>Skip to main content</a>
+			<a href="#main-content" className={n.child('skip-to-link')}>Skip to main content</a>
+			<a href="#disabilities-picker" className={n.child('skip-to-link')}>Skip to disabilities picker</a>
 			{cacheEnabled && <div className={n.child('cache')} />}
 			<div className={n.child('site-wrapper', !mouseEnabled && ['mouse-disabled'])}>
 				<main id="main-content" tabIndex="-1" className={n.child('main')}>
