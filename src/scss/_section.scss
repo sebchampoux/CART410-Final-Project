@@ -1,0 +1,23 @@
+.section {
+	&__head {
+		margin-bottom: 20px;
+	}
+
+	&__example-head {
+		font-size: 1.7rem;
+		&--good {
+			color: var(--dark-green);
+		}
+		&--bad {
+			color: var(--red);
+		}
+	}
+
+	&__head-icon {
+		margin-right: 10px;
+	}
+
+	&__example-head {
+		margin-bottom: 15px;
+	}
+}

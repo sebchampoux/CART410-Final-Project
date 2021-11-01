@@ -19,4 +19,34 @@
 	&__site-wrapper--mouse-disabled {
 		pointer-events: none;
 	}
+
+	&__skip-to-content {
+		position: fixed;
+		top: -999px;
+		left: -999px;
+		display: block;
+		padding: 10px;
+		outline: 2px solid var(--blue, #1393dd);
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		background-color: var(--white);
+
+		&:focus,
+		&:active {
+			top: 5px;
+			left: 5px;
+			width: auto;
+			height: auto;
+		}
+	}
+
+	&__main {
+		background-color: var(--light-grey);
+	}
+
+	&__container {
+		background-color: var(--white);
+		min-height: 100vh;
+	}
 }

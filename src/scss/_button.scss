@@ -1,0 +1,33 @@
+.button {
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	padding: 10px 15px;
+	display: inline-block;
+
+	&--bad {
+		border: 1px solid var(--light-green);
+		color: var(--light-green);
+
+		&:hover {
+			border-color: var(--medium-green);
+			color: var(--medium-green);
+		}
+	}
+
+	&--good {
+		background-color: var(--very-dark-green);
+		color: var(--white);
+		font-weight: bold;
+
+		&:hover,
+		&:focus {
+			background-color: var(--dark-green);
+		}
+
+		&:focus {
+			outline: 2px solid var(--blue);
+			outline-offset: 2px;
+		}
+	}
+}
