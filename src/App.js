@@ -14,6 +14,7 @@ import './bootstrap/bootstrap-grid.min.css';
 import './bootstrap/bootstrap-utilities.min.css';
 import './scss/App.scss';
 import Example from './components/Example';
+import Section from './components/Section';
 
 const n = new Namespace('app');
 
@@ -21,8 +22,6 @@ const App = () => {
 	const [cacheEnabled, setCacheEnabled] = useState(false);
 	const [mouseEnabled, setMouseEnabled] = useState(true);
 	const [colorBlindness, setColorBlindness] = useState(NO_COLOR_BLINDNESS);
-
-	const sectN = new Namespace('section');
 
 	return (
 		<>
@@ -32,17 +31,16 @@ const App = () => {
 			<div className={n.child('site-wrapper', !mouseEnabled && ['mouse-disabled'])}>
 				<main id="main-content" tabIndex="-1" className={n.child('main')}>
 					<div className={n.child('container', null, 'container')}>
-						<section className={sectN.base(null)}>
-							<h2 className={sectN.child('head')}>Buttons</h2>
-							<div className={sectN.child('row', null, 'row')}>
-								<Example exampleType={EXAMPLE_BAD}>
-									<BadButton onClick={() => alert('Inaccessible button clicked!')}>Bad button!</BadButton>
-								</Example>
-								<Example exampleType={EXAMPLE_GOOD}>
-									<GoodButton onClick={() => alert('Accessible button clicked!')}>Accessible button!</GoodButton>
-								</Example>
-							</div>
-						</section>
+						<Section
+							headText="Buttons"
+						>
+							<Example exampleType={EXAMPLE_BAD}>
+								<BadButton onClick={() => alert('Inaccessible button clicked!')}>Bad button!</BadButton>
+							</Example>
+							<Example exampleType={EXAMPLE_GOOD}>
+								<GoodButton onClick={() => alert('Accessible button clicked!')}>Accessible button!</GoodButton>
+							</Example>
+						</Section>
 					</div>
 				</main>
 			</div>
