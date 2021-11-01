@@ -1,0 +1,17 @@
+.example {
+	&__head {
+		font-size: 1.7rem;
+		margin-bottom: 15px;
+
+		&--good {
+			color: var(--dark-green);
+		}
+		&--bad {
+			color: var(--red);
+		}
+	}
+
+	&__icon {
+		margin-right: 10px;
+	}
+}
