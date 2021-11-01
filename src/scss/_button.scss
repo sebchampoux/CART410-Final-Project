@@ -25,9 +25,6 @@
 			background-color: var(--dark-green);
 		}
 
-		&:focus {
-			outline: 2px solid var(--blue);
-			outline-offset: 2px;
-		}
+		@include outline;
 	}
 }

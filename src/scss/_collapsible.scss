@@ -1,0 +1,38 @@
+.collapsible {
+	&__head {
+		margin-bottom: 0;
+	}
+
+	&__toggle-btn {
+		width: 100%;
+		padding: 15px;
+		text-align: left;
+		background-color: var(--very-dark-green);
+		color: var(--white);
+		border: none;
+		position: relative;
+
+		@include outline;
+
+		&:hover,
+		&:focus {
+			background-color: var(--dark-green);
+		}
+	}
+
+	&__head-icon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 15px;
+	}
+
+	&__content {
+		padding: 15px;
+		border: 2px solid var(--very-dark-green);
+
+		&--closed {
+			display: none;
+		}
+	}
+}

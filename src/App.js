@@ -15,6 +15,7 @@ import './bootstrap/bootstrap-utilities.min.css';
 import './scss/App.scss';
 import Example from './components/Example';
 import Section from './components/Section';
+import GoodCollapsible from './components/GoodCollapsible';
 
 const n = new Namespace('app');
 
@@ -33,6 +34,7 @@ const App = () => {
 					<div className={n.child('container', null, 'container')}>
 						<Section
 							headText="Buttons"
+							className={n.child('section')}
 						>
 							<Example exampleType={EXAMPLE_BAD}>
 								<BadButton onClick={() => alert('Inaccessible button clicked!')}>Bad button!</BadButton>
@@ -41,9 +43,21 @@ const App = () => {
 								<GoodButton onClick={() => alert('Accessible button clicked!')}>Accessible button!</GoodButton>
 							</Example>
 						</Section>
+						<Section
+							headText="Collapsibles"
+							className={n.child('section')}
+						>
+							<Example exampleType={EXAMPLE_BAD}>
+								TODO!
+							</Example>
+							<Example exampleType={EXAMPLE_GOOD}>
+								<GoodCollapsible />
+							</Example>
+						</Section>
 					</div>
 				</main>
 			</div>
+			{/*
 			<DisabilitiesPicker
 				{...{
 					mouseEnabled,
@@ -55,6 +69,7 @@ const App = () => {
 				}}
 				className={n.child('disabilities-picker')}
 			/>
+			/**/}
 		</>
 	);
 }
