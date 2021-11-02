@@ -14,7 +14,7 @@ const isFocusable = element => {
 		return false;
 	}
 	return (document.activeElement === element);
-}
+};
 
 const GoodModal = ({
 	closeModalFct,

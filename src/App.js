@@ -19,6 +19,7 @@ import BadCollapsible from './components/BadCollapsible';
 import GoodTabs from './components/GoodTabs';
 import BadTabs from './components/BadTabs';
 import GoodModal from './components/GoodModal';
+import BadModal from './components/BadModal';
 
 const n = new Namespace('app');
 
@@ -27,7 +28,7 @@ const App = () => {
 	const [mouseEnabled, setMouseEnabled] = useState(true);
 	const [colorBlindness, setColorBlindness] = useState(NO_COLOR_BLINDNESS);
 	const [goodModalOpen, setGoodModalOpen] = useState(true);
-	// const [badModalOpen, setBadModalOpen] = useState(false);
+	const [badModalOpen, setBadModalOpen] = useState(false);
 
 	return (
 		<>
@@ -76,7 +77,18 @@ const App = () => {
 							className={n.child('section')}
 						>
 							<Example exampleType={EXAMPLE_BAD}>
-								TODO
+								<GoodButton onClick={() => setBadModalOpen(!goodModalOpen)}>
+									Open non-accessible modal
+								</GoodButton>
+								{badModalOpen && (
+									<>
+										<div className={n.child('modal-cache')} />
+										<BadModal
+											closeModalFct={() => setBadModalOpen(false)}
+											className={n.child('modal')}
+										/>
+									</>
+								)}
 							</Example>
 							<Example exampleType={EXAMPLE_GOOD}>
 								<GoodButton onClick={() => setGoodModalOpen(!goodModalOpen)}>
