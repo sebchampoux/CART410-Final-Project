@@ -17,6 +17,7 @@ import Section from './components/Section';
 import GoodCollapsible from './components/GoodCollapsible';
 import BadCollapsible from './components/BadCollapsible';
 import GoodTabs from './components/GoodTabs';
+import BadTabs from './components/BadTabs';
 
 const n = new Namespace('app');
 
@@ -61,7 +62,7 @@ const App = () => {
 							className={n.child('section')}
 						>
 							<Example exampleType={EXAMPLE_BAD}>
-								TODO!
+								<BadTabs />
 							</Example>
 							<Example exampleType={EXAMPLE_GOOD}>
 								<GoodTabs />

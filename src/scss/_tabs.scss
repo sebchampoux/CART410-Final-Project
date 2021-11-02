@@ -31,18 +31,17 @@
 		@include outline;
 	}
 
-	&__img {
-		max-width: 100%;
-		display: inline-block;
-		margin-bottom: 15px;
-	}
-
 	&__tabs-content {
 		border: 1px solid var(--very-dark-green);
 		padding: 15px;
 
 		p {
 			margin-bottom: 0;
+		}
+		img {
+			max-width: 100%;
+			display: inline-block;
+			margin-bottom: 15px;
 		}
 
 		@include outline;
