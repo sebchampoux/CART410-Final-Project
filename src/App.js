@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 import { EXAMPLE_BAD, EXAMPLE_GOOD, NO_COLOR_BLINDNESS } from './constants/constants';
 import Namespace from './utils/namespace';
-
-import Colors from './components/Colors';
-import DisabilitiesPicker from './components/DisabilitiesPicker';
-import BadButton from './components/BadButton';
-import GoodButton from './components/GoodButton';
 
 import './bootstrap/bootstrap-reboot.min.css';
 import './bootstrap/bootstrap-grid.min.css';
 import './bootstrap/bootstrap-utilities.min.css';
 import './scss/App.scss';
+
+import Colors from './components/Colors';
+import DisabilitiesPicker from './components/DisabilitiesPicker';
+import BadButton from './components/BadButton';
+import GoodButton from './components/GoodButton';
 import Example from './components/Example';
 import Section from './components/Section';
 import GoodCollapsible from './components/GoodCollapsible';
 import BadCollapsible from './components/BadCollapsible';
+import GoodTabs from './components/GoodTabs';
 
 const n = new Namespace('app');
 
@@ -54,6 +54,17 @@ const App = () => {
 							</Example>
 							<Example exampleType={EXAMPLE_GOOD}>
 								<GoodCollapsible />
+							</Example>
+						</Section>
+						<Section
+							headText="Tabs"
+							className={n.child('section')}
+						>
+							<Example exampleType={EXAMPLE_BAD}>
+								TODO!
+							</Example>
+							<Example exampleType={EXAMPLE_GOOD}>
+								<GoodTabs />
 							</Example>
 						</Section>
 					</div>

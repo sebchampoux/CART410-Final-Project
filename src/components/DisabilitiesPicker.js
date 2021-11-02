@@ -29,7 +29,7 @@ const DisabilitiesPicker = ({
 				aria-expanded={isOpen}
 			>
 				<FontAwesomeIcon icon={icon} />
-				<span class="sr-only">Toggle disabilities panel</span>
+				<span className="sr-only">Toggle disabilities panel</span>
 			</button>
 			<form
 				className={n.child('form', !isOpen && ['closed'])}
