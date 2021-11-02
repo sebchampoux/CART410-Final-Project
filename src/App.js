@@ -27,7 +27,7 @@ const App = () => {
 	const [cacheEnabled, setCacheEnabled] = useState(false);
 	const [mouseEnabled, setMouseEnabled] = useState(true);
 	const [colorBlindness, setColorBlindness] = useState(NO_COLOR_BLINDNESS);
-	const [goodModalOpen, setGoodModalOpen] = useState(true);
+	const [goodModalOpen, setGoodModalOpen] = useState(false);
 	const [badModalOpen, setBadModalOpen] = useState(false);
 
 	return (
