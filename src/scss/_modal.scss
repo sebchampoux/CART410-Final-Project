@@ -1,0 +1,44 @@
+.modal {
+	background-color: var(--white);
+	box-shadow: 0 3px 5px 2px var(--grey);
+
+	&__head {
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid var(--grey);
+		padding: 20px;
+		padding-right: 60px;
+		position: relative;
+	}
+	
+	&__title {
+		margin-right: 30px;
+	}
+
+	&__close-btn {
+		border: none;
+		background-color: transparent;
+		padding: 0 25px;
+		font-size: 1.5rem;
+		order: 2;
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+
+		@include outline;
+	}
+
+	&__content {
+		padding: 20px;
+	}
+
+	&__buttons-wrapper {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__btn {
+		margin-left: 15px;
+	}
+}

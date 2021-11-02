@@ -18,6 +18,7 @@ import GoodCollapsible from './components/GoodCollapsible';
 import BadCollapsible from './components/BadCollapsible';
 import GoodTabs from './components/GoodTabs';
 import BadTabs from './components/BadTabs';
+import GoodModal from './components/GoodModal';
 
 const n = new Namespace('app');
 
@@ -25,6 +26,8 @@ const App = () => {
 	const [cacheEnabled, setCacheEnabled] = useState(false);
 	const [mouseEnabled, setMouseEnabled] = useState(true);
 	const [colorBlindness, setColorBlindness] = useState(NO_COLOR_BLINDNESS);
+	const [goodModalOpen, setGoodModalOpen] = useState(true);
+	// const [badModalOpen, setBadModalOpen] = useState(false);
 
 	return (
 		<>
@@ -66,6 +69,28 @@ const App = () => {
 							</Example>
 							<Example exampleType={EXAMPLE_GOOD}>
 								<GoodTabs />
+							</Example>
+						</Section>
+						<Section
+							headText="Tabs"
+							className={n.child('section')}
+						>
+							<Example exampleType={EXAMPLE_BAD}>
+								TODO
+							</Example>
+							<Example exampleType={EXAMPLE_GOOD}>
+								<GoodButton onClick={() => setGoodModalOpen(!goodModalOpen)}>
+									Open accessible modal
+								</GoodButton>
+								{goodModalOpen && (
+									<>
+										<div className={n.child('modal-cache')} />
+										<GoodModal
+											closeModalFct={() => setGoodModalOpen(false)}
+											className={n.child('modal')}
+										/>
+									</>
+								)}
 							</Example>
 						</Section>
 					</div>

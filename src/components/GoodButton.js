@@ -5,12 +5,18 @@ const n = new Namespace('button');
 const GoodButton = ({
 	children,
 	onClick,
-}) => (
-	<button
-		className={n.base(['good'])}
-		onClick={onClick}
-	>
-		{children}
-	</button>
-);
+	className,
+	btnStyle,
+}) => {
+	const mods = ['good'];
+	if (btnStyle) mods.push(btnStyle);
+	return (
+		<button
+			className={n.base(mods, className)}
+			onClick={onClick}
+		>
+			{children}
+		</button>
+	);
+}
 export default GoodButton;
