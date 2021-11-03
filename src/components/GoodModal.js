@@ -15,6 +15,15 @@ const isFocusable = element => {
 	}
 	return (document.activeElement === element);
 };
+const findFocusableChilds = (node, onNodeFocusable) => {
+	Array.from(node.childNodes).forEach(child => {
+		if (!child) return;
+		if (isFocusable(child)) {
+			onNodeFocusable(child);
+		}
+		findFocusableChilds(child, onNodeFocusable);
+	});
+};
 
 const GoodModal = ({
 	closeModalFct,
@@ -24,15 +33,6 @@ const GoodModal = ({
 	const focusableElementsRefs = useRef(null);
 
 	// Trap focus
-	const findFocusableChilds = (node, onNodeFocusable) => {
-		Array.from(node.childNodes).forEach(child => {
-			if (!child) return;
-			if (isFocusable(child)) {
-				onNodeFocusable(child);
-			}
-			findFocusableChilds(child, onNodeFocusable);
-		});
-	};
 	useEffect(() => {
 		const result = [];
 		findFocusableChilds(modalRootRef.current, c => result.push(c));
