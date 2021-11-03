@@ -2,10 +2,11 @@
 
 Research-creation project for CART410 Research-Creation in Computation Arts, Fall 2021.
 
+[Try the prototype here!](https://sebchampoux.github.io/CART410-Final-Project/)
+
 Node 14.15.1
 
 NPM 7.12.0
-
 
 # Getting Started with Create React App
 
