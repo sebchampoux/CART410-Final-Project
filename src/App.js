@@ -21,6 +21,7 @@ import BadTabs from './components/BadTabs';
 import GoodModal from './components/GoodModal';
 import BadModal from './components/BadModal';
 import GoodForm from './components/GoodForm';
+import BadForm from './components/BadForm';
 
 const n = new Namespace('app');
 
@@ -111,7 +112,7 @@ const App = () => {
 							className={n.child('section')}
 						>
 							<Example exampleType={EXAMPLE_BAD}>
-								TODO!
+								<BadForm />
 							</Example>
 							<Example exampleType={EXAMPLE_GOOD}>
 								<GoodForm />

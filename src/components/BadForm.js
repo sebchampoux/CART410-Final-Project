@@ -1,54 +1,59 @@
+import { useRef } from "react";
 import Namespace from "../utils/namespace";
-import GoodButton from "./GoodButton";
-import GoodInput from "./GoodInput";
+import BadButton from './BadButton';
+import BadInput from './BadInput';
 
 const n = new Namespace('form');
 
-const GoodForm = ({
+const BadForm = ({
 	title = 'Create an account!',
 }) => {
 	const onSubmit = e => {
 		e.preventDefault();
-		alert('Good form submitted!');
+		alert('Bad form submitted!');
+	};
+	const formRef = useRef(null);
+	const onSubmitBtnClick = () => {
+		formRef.current.requestSubmit();
 	};
 	return (
-		<form onSubmit={onSubmit} className={n.base()}>
+		<form onSubmit={onSubmit} className={n.base()} ref={formRef}>
 			<h2 className={n.child('heading')}>{title}</h2>
-			<GoodInput
+			<BadInput
 				className={n.child('input')}
 				label="Email address"
 				id="email-address"
 				name="email-address"
 				type="email"
 			/>
-			<GoodInput
+			<BadInput
 				className={n.child('input')}
 				label="Password"
 				id="password"
 				name="password"
 				type="password"
 			/>
-			<GoodInput
+			<BadInput
 				className={n.child('input')}
 				label="Confirm your password"
 				id="confirm-password"
 				name="confirm-password"
 				type="password"
 			/>
-			<GoodInput
+			<BadInput
 				className={n.child('input')}
 				label="I have read and accept the terms and conditions"
 				id="confirm-TOS"
 				name="confirm-TOS"
 				type="checkbox"
 			/>
-			<GoodButton
+			<BadButton
 				className={n.child('submit-btn')}
-				type="submit"
+				onClick={onSubmitBtnClick}
 			>
 				Subscribe!
-			</GoodButton>
+			</BadButton>
 		</form>
 	);
 };
-export default GoodForm;
+export default BadForm;
