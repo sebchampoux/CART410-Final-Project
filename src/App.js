@@ -22,6 +22,7 @@ import GoodModal from './components/GoodModal';
 import BadModal from './components/BadModal';
 import GoodForm from './components/GoodForm';
 import BadForm from './components/BadForm';
+import Instructions from './components/Instructions';
 
 const n = new Namespace('app');
 
@@ -41,6 +42,11 @@ const App = () => {
 			<div className={n.child('site-wrapper', !mouseEnabled && ['mouse-disabled'])}>
 				<main id="main-content" tabIndex="-1" className={n.child('main')}>
 					<div className={n.child('container', null, 'container')}>
+						<Section headText="How to use this site" className={n.child('section')}>
+							<GoodCollapsible title="Open/close instructions">
+								<Instructions />
+							</GoodCollapsible>
+						</Section>
 						<Section
 							headText="Buttons"
 							className={n.child('section')}
