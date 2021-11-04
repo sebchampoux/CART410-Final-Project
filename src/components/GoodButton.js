@@ -7,6 +7,7 @@ const GoodButton = ({
 	onClick,
 	className,
 	btnStyle,
+	...otherProps
 }) => {
 	const mods = ['good'];
 	if (btnStyle) mods.push(btnStyle);
@@ -14,6 +15,7 @@ const GoodButton = ({
 		<button
 			className={n.base(mods, className)}
 			onClick={onClick}
+			{...otherProps}
 		>
 			{children}
 		</button>

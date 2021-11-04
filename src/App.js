@@ -20,6 +20,7 @@ import GoodTabs from './components/GoodTabs';
 import BadTabs from './components/BadTabs';
 import GoodModal from './components/GoodModal';
 import BadModal from './components/BadModal';
+import GoodForm from './components/GoodForm';
 
 const n = new Namespace('app');
 
@@ -103,6 +104,17 @@ const App = () => {
 										/>
 									</>
 								)}
+							</Example>
+						</Section>
+						<Section
+							headText="Tabs"
+							className={n.child('section')}
+						>
+							<Example exampleType={EXAMPLE_BAD}>
+								TODO!
+							</Example>
+							<Example exampleType={EXAMPLE_GOOD}>
+								<GoodForm />
 							</Example>
 						</Section>
 					</div>

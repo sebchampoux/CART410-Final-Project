@@ -1,0 +1,29 @@
+.input {
+	display: flex;
+	flex-direction: column;
+
+	&--checkbox {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	&__label {
+		display: inline-block;
+		margin-bottom: 5px;
+
+		&--checkbox {
+			margin: 0;
+		}
+	}
+	
+	&__input {
+		padding: 5px;
+		@include outline;
+
+		&--checkbox {
+			padding: 0;
+			margin-right: 10px;
+			order: -1;
+		}
+	}
+}
