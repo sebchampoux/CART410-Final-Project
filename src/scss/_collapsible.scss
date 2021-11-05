@@ -6,6 +6,7 @@
 	&__toggle-btn {
 		width: 100%;
 		padding: 15px;
+		padding-right: 30px;
 		text-align: left;
 		background-color: var(--very-dark-green);
 		color: var(--white);
@@ -33,6 +34,10 @@
 
 		&--closed {
 			display: none;
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
 		}
 	}
 }

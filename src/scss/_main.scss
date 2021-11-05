@@ -1,0 +1,12 @@
+.main {
+	&__collapsible {
+		margin-bottom: 20px;
+	}
+
+	&__container {
+		background-color: var(--white);
+		padding: 30px;
+		margin-top: -80px;
+		box-shadow: 0 0 8px 3px rgba(0,0,0,0.25);
+	}
+}

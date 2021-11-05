@@ -7,13 +7,14 @@ const n = new Namespace('collapsible');
 const GoodCollapsible = ({
 	title,
 	children: content,
+	className,
 }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const icon = isOpen ? 'caret-up' : 'caret-down';
 	const toggleCollapsibleOpen = () => setIsOpen(!isOpen);
 
 	return (
-		<div className={n.base()}>
+		<div className={n.base(null, className)}>
 			<h3 className={n.child('head')}>
 				<button
 					className={n.child('toggle-btn')}
