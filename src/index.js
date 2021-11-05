@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import ComponentsDemo from './routes/ComponentsDemo';
+import DemoPage from './routes/DemoPage';
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -9,9 +12,13 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 library.add(fas);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/components-demo" element={<ComponentsDemo />} />
+      <Route path="/demo-page" element={<DemoPage />} />
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
