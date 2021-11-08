@@ -15,6 +15,7 @@ import GoodCollapsible from '../components/GoodCollapsible';
 import GoodInput from '../components/GoodInput';
 import GoodButton from '../components/GoodButton';
 import Textarea from '../components/Textarea';
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 
 const nApp = new Namespace('app');
 const nMain = new Namespace('main');
@@ -22,6 +23,9 @@ const nForm = new Namespace('form');
 const nHeader = new Namespace('header');
 const nMenu = new Namespace('menu');
 const nMainNav = new Namespace('main-nav');
+const nFooter = new Namespace('footer');
+const nSocial = new Namespace('socials');
+const nRelated = new Namespace('related-content');
 
 const DemoPage = () => {
 	const [cacheEnabled, setCacheEnabled] = useState(false);
@@ -32,6 +36,7 @@ const DemoPage = () => {
 		<>
 			<Colors colorBlindness={colorBlindness} />
 			<a href="#main-content" className={nApp.child('skip-to-link')}>Skip to main content</a>
+			<a href="#footer" className={nApp.child('skip-to-link')}>Skip to footer</a>
 			<a href="#disabilities-picker" className={nApp.child('skip-to-link')}>Skip to disabilities picker</a>
 			{cacheEnabled && <div className={nApp.child('cache')} />}
 
@@ -127,20 +132,102 @@ const DemoPage = () => {
 									<GoodButton type="submit">Send</GoodButton>
 								</form>
 							</div>
-							<aside className="col-3 offset-1">
-								<h2>Related content</h2>
-								<nav>
-									<ul aria-label="Related content">
-										<li><a href="#">Park map</a></li>
-										<li><a href="#">Tickets</a></li>
-										<li><a href="#">Season passes</a></li>
-										<li><a href="#">The Flash Pass</a></li>
-									</ul>
-								</nav>
+							<aside className="col-4 offset-1">
+								<section className={nRelated.base()}>
+									<h2>Related content</h2>
+									<nav>
+										<ul aria-label="Related content" className={nRelated.child('list-links')}>
+											<li><a href="#">Park map</a></li>
+											<li><a href="#">Tickets</a></li>
+											<li><a href="#">Season passes</a></li>
+											<li><a href="#">The Flash Pass</a></li>
+										</ul>
+									</nav>
+								</section>
 							</aside>
 						</div>
 					</section>
 				</main>
+				<footer className={nFooter.base()} id="footer">
+					<div className="container">
+						<div className={nFooter.child('top-row', null, 'row')}>
+							<section className="col-4">
+								<h2>Quick Links</h2>
+								<nav>
+									<ul aria-label="Quick navigation links" className={nFooter.child('quick-links')}>
+										<li>
+											<a href="#">
+												Park map
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												The Flash Pass
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												Careers
+											</a>
+										</li>
+									</ul>
+								</nav>
+							</section>
+							<section className="col-4">
+								<h2>Subscribe to our newsletter!</h2>
+								<form onSubmit={e => e.preventDefault()} className={nForm.base()}>
+									<GoodInput
+										label="Your email"
+										type="email"
+										id="email"
+										name="email"
+										className={nForm.child('input')}
+									/>
+									<GoodInput
+										label="I accept the confidentiality agreement"
+										type="checkbox"
+										id="accept-tos"
+										name="accept-tos"
+										className={nForm.child('input')}
+									/>
+									<GoodButton type="submit">Sign up</GoodButton>
+								</form>
+							</section>
+							<section className="col-4">
+								<h2>Join us on social media!</h2>
+								<nav className={nSocial.base()}>
+									<ul aria-label="Six Flags Great America's social medias" className={nSocial.child('list')}>
+										<li className={nSocial.child('item')}>
+											<a href="#" className={nSocial.child('link')}>
+												<Icon icon={['fab', 'facebook']} />
+												<span className="sr-only">Facebook</span>
+											</a>
+										</li>
+										<li className={nSocial.child('item')}>
+											<a href="#" className={nSocial.child('link')}>
+												<Icon icon={['fab', 'twitter']} />
+												<span className="sr-only">Twitter</span>
+											</a>
+										</li>
+										<li className={nSocial.child('item')}>
+											<a href="#" className={nSocial.child('link')}>
+												<Icon icon={['fab', 'instagram']} />
+												<span className="sr-only">Instagram</span>
+											</a>
+										</li>
+									</ul>
+								</nav>
+							</section>
+						</div>
+					</div>
+					<div className="container">
+						<div className="row">
+							<section className={nFooter.child('copyright', null, 'col-12')}>
+								&copy; 2021 Sébastien - Final Project for CART410 Research-Creation in Computation Arts, Fall 2021.
+							</section>
+						</div>
+					</div>
+				</footer>
 			</div>
 
 			<DisabilitiesPicker

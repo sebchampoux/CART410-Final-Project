@@ -8,8 +8,9 @@ import DemoPage from './routes/DemoPage';
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
-library.add(fas);
+library.add(fab, fas);
 
 ReactDOM.render(
   <BrowserRouter>

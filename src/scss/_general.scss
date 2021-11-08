@@ -1,4 +1,10 @@
 a {
+	color: var(--red);
+	&:hover,
+	&:focus {
+		color: var(--darker-red);
+	}
+
 	@include outline;
 }
 
