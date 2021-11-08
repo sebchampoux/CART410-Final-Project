@@ -4,7 +4,7 @@ const blinder = require('color-blind');
 const colors = {
 	'grey': '#e8e8e8',
 	'light-grey': '#f8f8f8',
-	red: '#ff0000',
+	red: '#b80c09',
 	blue: '#1393dd',
 	white: '#ffffff',
 	black: '#000000',

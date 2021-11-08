@@ -43,7 +43,7 @@ const BadForm = ({
 			<BadInput
 				className={n.child('input')}
 				label="I have read and accept the terms and conditions"
-				id="confirm-TOS"
+				id="confirm-TOS-2"
 				name="confirm-TOS"
 				type="checkbox"
 			/>

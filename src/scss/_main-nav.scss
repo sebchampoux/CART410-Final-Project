@@ -1,0 +1,15 @@
+.main-nav {
+	padding: 10px 0;
+
+	&__container {
+		display: flex;
+		align-items: center;
+	}
+	&__logo-link {
+		display: inline-block;
+		margin-right: 30px;
+	}
+	&__menu {
+		align-self: stretch;
+	}
+}

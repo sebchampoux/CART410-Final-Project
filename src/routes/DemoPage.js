@@ -20,6 +20,8 @@ const nApp = new Namespace('app');
 const nMain = new Namespace('main');
 const nForm = new Namespace('form');
 const nHeader = new Namespace('header');
+const nMenu = new Namespace('menu');
+const nMainNav = new Namespace('main-nav');
 
 const DemoPage = () => {
 	const [cacheEnabled, setCacheEnabled] = useState(false);
@@ -34,14 +36,37 @@ const DemoPage = () => {
 			{cacheEnabled && <div className={nApp.child('cache')} />}
 
 			<div className={nApp.child('site-wrapper', !mouseEnabled && ['mouse-disabled'])}>
-				<nav aria-label="Main navigation">
-					<ul aria-label="Main navigation links">
-					</ul>
-				</nav>
+				<div className={nMainNav.base()}>
+					<div className={nMainNav.child('container', null, 'container')}>
+						<a href="https://www.sixflags.com/greatamerica/" className={nMainNav.child('logo-link')}>
+							<img src="https://sf-static.sixflags.com/wp-content/uploads/sfgam_motion.gif" alt="Six Flags logo" className={nMainNav.child('logo-img')} />
+						</a>
+						<nav aria-label="Main navigation" className={nMenu.base(null, nMainNav.child('menu'))}>
+							<ul aria-label="Main navigation links" className={nMenu.child('list')}>
+								<li className={nMenu.child('item')}>
+									<a href="#" className={nMenu.child('link')}>Things to do</a>
+								</li>
+								<li className={nMenu.child('item')}>
+									<a href="#" className={nMenu.child('link')}>Plan your visit</a>
+								</li>
+								<li className={nMenu.child('item')}>
+									<a href="#" className={nMenu.child('link')}>Help</a>
+								</li>
+								<li className={nMenu.child('item')}>
+									<a href="#" className={nMenu.child('link', ['buy-tickets'])}>Buy tickets</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
 				<header className={nHeader.base()}>
 					<div className="container">
-						<h1>Six Flags Great America</h1>
-						<h2>A constituent of the Six Flags<sup>&reg;</sup> family</h2>
+						<div className="row">
+							<div className={nHeader.child('content-wrapper')}>
+								<h1>Six Flags Great America</h1>
+								<h2>A part of the Six Flags<sup>&reg;</sup> family</h2>
+							</div>
+						</div>
 					</div>
 				</header>
 				<main id="main-content" tabIndex="-1" className={nMain.base(null, nApp.child('main'))}>
@@ -63,7 +88,7 @@ const DemoPage = () => {
 									<p>Every day is a great day to visit! But, if you are worried about long lines and crowds, plan to visit the park when attendance is lightest. Best bets: weekdays during the summer and any regular operating day during the months of May, June and September.</p>
 								</GoodCollapsible>
 								<h2>Contact us</h2>
-								<p>Couldn't quite find what you were looking for? Contact us!</p>
+								<p>Couldn't quite find what you were looking for? That's unfortunate, but we're nice people. Shoot us an email!</p>
 								<form className={nForm.base()}>
 									<GoodInput
 										className={nForm.child('input')}
