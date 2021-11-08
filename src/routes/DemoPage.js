@@ -31,6 +31,10 @@ const DemoPage = () => {
 	const [cacheEnabled, setCacheEnabled] = useState(false);
 	const [mouseEnabled, setMouseEnabled] = useState(true);
 	const [colorBlindness, setColorBlindness] = useState(NO_COLOR_BLINDNESS);
+	const formSubmission = e => {
+		e.preventDefault();
+		alert(e.target.dataset.submitMessage);
+	};
 
 	return (
 		<>
@@ -94,7 +98,11 @@ const DemoPage = () => {
 								</GoodCollapsible>
 								<h2>Contact us</h2>
 								<p>Couldn't quite find what you were looking for? That's unfortunate, but we're nice people. Shoot us an email!</p>
-								<form className={nForm.base()}>
+								<form
+									className={nForm.base()}
+									onSubmit={formSubmission}
+									data-submit-message="Contact form submitted!"
+								>
 									<GoodInput
 										className={nForm.child('input')}
 										label="Full name"
@@ -175,7 +183,11 @@ const DemoPage = () => {
 							</section>
 							<section className="col-4">
 								<h2>Subscribe to our newsletter!</h2>
-								<form onSubmit={e => e.preventDefault()} className={nForm.base()}>
+								<form
+									data-submit-message="You have been registered to the newsletter successfully!"
+									onSubmit={formSubmission}
+									className={nForm.base()}
+								>
 									<GoodInput
 										label="Your email"
 										type="email"
