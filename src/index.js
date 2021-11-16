@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import ComponentsDemo from './routes/ComponentsDemo';
@@ -13,13 +13,13 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 library.add(fab, fas);
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/components-demo" element={<ComponentsDemo />} />
       <Route path="/demo-page" element={<DemoPage />} />
     </Routes>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
 

@@ -2,7 +2,7 @@
   "name": "cart410-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sebchampoux.github.io/CART410-Final-Project",
+  "homepage": "https://sebchampoux.github.io/CART410-Final-Project/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
