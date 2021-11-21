@@ -10,8 +10,8 @@ const colors = {
 	white: '#ffffff',
 	black: '#000000',
 
-	'very-dark-green': '#212922',
-	'dark-green': '#294936',
+	'very-dark-green': '#1B3B1F',
+	'dark-green': '#094F12',
 	'medium-green': '#3E6259',
 	'light-green': '#61e38e'
 };

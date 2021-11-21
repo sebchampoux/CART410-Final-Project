@@ -114,7 +114,7 @@ const App = () => {
 							</Example>
 						</Section>
 						<Section
-							headText="Tabs"
+							headText="Forms"
 							className={n.child('section')}
 						>
 							<Example exampleType={EXAMPLE_BAD}>
