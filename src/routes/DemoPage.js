@@ -137,7 +137,7 @@ const DemoPage = () => {
 										name="subscribe-newsletter"
 										type="checkbox"
 									/>
-									<GoodButton type="submit">Send</GoodButton>
+									<GoodButton type="submit" aria-label="Submit contact form">Send</GoodButton>
 								</form>
 							</div>
 							<aside className="col-4 offset-1">
@@ -202,7 +202,7 @@ const DemoPage = () => {
 										name="accept-tos"
 										className={nForm.child('input')}
 									/>
-									<GoodButton type="submit">Sign up</GoodButton>
+									<GoodButton type="submit" aria-label="Sign up for the newsletter">Sign up</GoodButton>
 								</form>
 							</section>
 							<section className="col-4">
